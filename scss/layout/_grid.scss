@@ -1,0 +1,122 @@
+body * {
+    min-height: 60px;
+    border: 1px solid $color-grey;
+}
+
+main {
+    grid-area: main;
+}
+
+.main-header {
+    grid-area: header;
+    background-color: $color-purple;
+  }
+
+.main-nav {
+    grid-area: nav;
+    background-color: $color-dark-purple;
+  }
+
+.dashboard-header {
+    grid-area: dh;
+    background-color: $color-light-grey;
+}
+
+.alert {
+    grid-area: alert;
+}
+
+.traffic {
+    grid-area: traffic;
+}
+
+.daily-traffic {
+    grid-area: daily;
+}
+
+.mobile-users {
+    grid-area: users;
+}
+
+.social-stats {
+    grid-area: social;
+}
+
+.new-members {
+    grid-area: members;
+}
+
+.recent-activity {
+    grid-area: activity;
+}
+
+.message-user {
+    grid-area: message;
+}
+
+.settings {
+    grid-area: settings;
+}
+
+body {
+    display: grid;
+    grid-template-areas: 
+      "header"
+      "nav"
+      "main"
+  }
+
+  main {
+    display: grid;
+    grid-template-areas: 
+      "dh"
+      "alert"
+      "traffic"
+      "daily"
+      "users"
+      "social"
+      "members"
+      "activity"
+      "message"
+      "settings";
+  }
+
+
+  @media (min-width: $medium) {
+    body {
+        grid-template-areas: 
+          "header"
+          "nav"
+          "main";
+      }
+    main {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 
+        "dh dh"
+        "alert alert"
+        "traffic traffic"
+        "daily users"
+        "social social"
+        "members activity"
+        "message settings";
+    }
+}
+  @media (min-width: $large) {
+    body {
+        grid-template-columns: 1fr 14fr;
+        grid-template-areas: 
+          "header header"
+          "nav main"
+      }
+    main {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 
+        "dh   dh"
+        "alert alert"
+        "traffic traffic"
+        "daily users"
+        "social social"
+        "members activity"
+        "message settings";
+    }
+}
