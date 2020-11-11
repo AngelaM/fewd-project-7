@@ -355,8 +355,17 @@ a {
   text-decoration: none;
 }
 
+.alert-text {
+  font-weight: 700;
+  color: #fff;
+  padding: 0px 12px;
+}
+
 body * {
   min-height: 60px;
+}
+
+.border {
   border: 1px solid #b2b2b2;
 }
 
@@ -367,6 +376,9 @@ main {
 .main-header {
   grid-area: header;
   background-color: #7477bf;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .main-nav {
@@ -397,6 +409,10 @@ main {
 
 .social-stats {
   grid-area: social;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .new-members {
@@ -425,6 +441,25 @@ main {
   grid-template-areas: "dh" "alert" "traffic" "daily" "users" "social" "members" "activity" "message" "settings";
 }
 
+.alert-bar {
+  background-color: #7477bf;
+  padding: 20px 0px;
+  width: 90vw;
+  color: #fff;
+}
+
+.section-header {
+  width: 80vw;
+}
+
+.social-card {
+  background-color: #f4f4f4;
+  border: 1px solid #b2b2b2;
+  height: 20px;
+  width: 80vw;
+  display: inline-block;
+}
+
 @media (min-width: 768px) {
   body {
     grid-template-areas: "header" "nav" "main";
@@ -433,6 +468,14 @@ main {
   main {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "dh dh" "alert alert" "traffic traffic" "daily users" "social social" "members activity" "message settings";
+  }
+
+  .social-stats {
+    flex-direction: row;
+  }
+
+  .social-card {
+    width: 24vw;
   }
 }
 @media (min-width: 1024px) {

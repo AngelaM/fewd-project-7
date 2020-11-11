@@ -1,5 +1,8 @@
 body * {
     min-height: 60px;
+}
+
+.border {
     border: 1px solid $color-grey;
 }
 
@@ -10,6 +13,9 @@ main {
 .main-header {
     grid-area: header;
     background-color: $color-purple;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
 .main-nav {
@@ -40,6 +46,10 @@ main {
 
 .social-stats {
     grid-area: social;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .new-members {
@@ -81,6 +91,24 @@ body {
       "settings";
   }
 
+  .alert-bar {
+    background-color: $color-purple;
+    padding: 20px 0px;
+    width: 90vw;
+    color: $color-white;
+  }
+
+  .section-header {
+      width: 80vw;
+  }
+
+  .social-card {
+    background-color: $color-light-grey;
+    border: 1px solid $color-grey;
+    height: 20px;
+    width: 80vw;
+    display: inline-block;
+}
 
   @media (min-width: $medium) {
     body {
@@ -99,6 +127,12 @@ body {
         "social social"
         "members activity"
         "message settings";
+    }
+    .social-stats {
+        flex-direction: row;
+    }
+    .social-card {
+        width: 24vw;
     }
 }
   @media (min-width: $large) {
@@ -120,3 +154,4 @@ body {
         "message settings";
     }
 }
+
