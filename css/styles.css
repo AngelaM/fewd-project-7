@@ -340,6 +340,7 @@ template {
 /* ---- Color Variables ---- */
 /* ---- Font Variables ---- */
 /* ---- Media Variables ---- */
+/* ---- Media Variables ---- */
 /* ---- Typography ---- */
 * {
   font-family: "Montsserat", sans-serif;
@@ -377,6 +378,8 @@ h1 span {
 .dashboard-word {
   font-size: 1.25em;
   font-weight: 700;
+  text-align: center;
+  line-height: 35px;
 }
 
 h2 {
@@ -401,6 +404,35 @@ h2 {
   cursor: pointer;
 }
 
+input {
+  font-weight: 300;
+}
+
+.user-name {
+  color: #fff;
+  padding-right: 20px;
+  font-weight: 300;
+}
+
+.social-name {
+  color: #7477bf;
+}
+
+.social-users {
+  font-weight: 300;
+  font-size: 2em;
+}
+
+.user-pic-bg {
+  background-color: #f4f4f4;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .user-pic {
   height: 30px;
   width: 30px;
@@ -410,24 +442,42 @@ h2 {
 
 .bell {
   stroke: #fff;
+  stroke-width: 0.8px;
   height: 30px;
   width: 30px;
-  margin: 10px;
+  margin: 10px 20px 10px 10px;
+}
+
+.green-dot {
+  background-color: #81c98f;
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+  position: relative;
+  top: -14px;
+  left: 44px;
+  z-index: 999;
 }
 
 .social-icon {
-  height: 20px;
-  width: 20px;
-  color: white;
-  background-color: blue;
+  height: 60px;
+  width: 60px;
 }
 
-.border {
-  border: 1px solid #b2b2b2;
+.social-circle {
+  fill: #7477bf;
+}
+
+.social-logo {
+  fill: #fff;
 }
 
 main {
   grid-area: main;
+}
+
+canvas {
+  padding: 16px;
 }
 
 .main-header {
@@ -436,11 +486,50 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+}
+
+.account-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 50vw;
+}
+
+.alert-bell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-left: 2px solid #404c72;
+}
+
+.user-pic-bg {
+  margin: 0 10px;
 }
 
 .main-nav {
   grid-area: nav;
   background-color: #404c72;
+  display: flex;
+  justify-content: center;
+}
+
+.main-nav ul {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.main-nav li {
+  margin: 0 16px;
 }
 
 .padded {
@@ -450,25 +539,57 @@ main {
 .dashboard-header {
   grid-area: dh;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: space-between;
   background-color: #f4f4f4;
 }
 
 .dashboard-title {
   background-color: #fff;
-  padding: 16px;
+  padding: 10px;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.search-container {
+  width: 100%;
+  border-bottom: 1px solid #b2b2b2;
+  border-top: 1px solid #b2b2b2;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 10px 3%;
+}
+
+.search-container input {
+  width: 260px;
+  padding: 8px;
+  border-top: 1px solid #b2b2b2;
+  border-left: 1px solid #b2b2b2;
+  border-bottom: 1px solid #b2b2b2;
+  border-right: none;
+}
+
+.search-container button {
+  padding: 8px;
+  float: right;
+  border-top: 1px solid #b2b2b2;
+  border-right: 1px solid #b2b2b2;
+  border-bottom: 1px solid #b2b2b2;
+  border-left: none;
+  background-color: #fff;
+}
+
+.search-container i {
+  color: #7477bf;
 }
 
 .account-info,
 .user-info {
   display: flex;
   flex-direction: row;
-}
-
-.search-container {
-  padding: 16px;
 }
 
 .alert {
@@ -527,34 +648,49 @@ main {
 
 .daily-traffic {
   grid-area: daily;
+  border-top: 1px solid #b2b2b2;
 }
 
 .mobile-users {
   grid-area: users;
+  border-top: 1px solid #b2b2b2;
 }
 
 .social-stats {
   grid-area: social;
+  border-top: 1px solid #b2b2b2;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
+}
+
+.social-card {
+  background-color: #f4f4f4;
+  border: 1px solid #b2b2b2;
+  height: 20px;
+  width: 80vw;
+  display: inline-block;
 }
 
 .new-members {
   grid-area: members;
+  border-top: 1px solid #b2b2b2;
 }
 
 .recent-activity {
   grid-area: activity;
+  border-top: 1px solid #b2b2b2;
 }
 
 .message-user {
   grid-area: message;
+  border-top: 1px solid #b2b2b2;
 }
 
 .settings {
   grid-area: settings;
+  border-top: 1px solid #b2b2b2;
 }
 
 body {
@@ -574,14 +710,6 @@ main {
   justify-content: space-between;
 }
 
-.social-card {
-  background-color: #f4f4f4;
-  border: 1px solid #b2b2b2;
-  height: 20px;
-  width: 80vw;
-  display: inline-block;
-}
-
 @media (min-width: 768px) {
   body {
     grid-template-areas: "header" "nav" "main";
@@ -592,8 +720,13 @@ main {
     grid-template-areas: "dh dh" "alert alert" "traffic traffic" "daily users" "social social" "members activity" "message settings";
   }
 
+  .account-info {
+    width: 32vw;
+  }
+
   .social-stats {
     flex-direction: row;
+    justify-content: space-between;
   }
 
   .social-card {
@@ -610,6 +743,12 @@ main {
     border-right: 1px solid #b2b2b2;
   }
 
+  .search-container {
+    width: 80%;
+    border-top: none;
+    justify-content: flex-end;
+  }
+
   .section-header {
     flex-direction: row;
   }
@@ -621,16 +760,22 @@ main {
   .half-chart {
     position: relative;
     height: 20vh;
-    width: 45vw;
+    width: 44vw;
   }
 
   .traffic-options ul {
     max-width: none;
   }
+
+  .daily-traffic,
+.new-members,
+.message-user {
+    border-right: 1px solid #b2b2b2;
+  }
 }
 @media (min-width: 1024px) {
   body {
-    grid-template-columns: 1fr 14fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: "header header" "nav main";
   }
 
@@ -638,6 +783,22 @@ main {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "dh   dh" "alert alert" "traffic traffic" "daily users" "social social" "members activity" "message settings";
   }
+
+  .main-nav ul {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .main-nav li {
+    margin: 16px 0;
+  }
+}
+.main-nav li {
+  stroke: #404c72;
+  stroke-width: 0.5px;
+  fill: #fff;
+  height: 30px;
+  width: 30px;
 }
 
 /*# sourceMappingURL=styles.css.map */

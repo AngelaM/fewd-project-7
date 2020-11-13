@@ -37,6 +37,8 @@
   .dashboard-word {
     font-size: 1.25em;
     font-weight: $font-bold;
+    text-align: center;
+    line-height: 35px;
   }
 
   h2 {
@@ -59,6 +61,25 @@
 
   .alert-x {
     cursor: pointer;
+  }
+
+  input {
+    font-weight: 300;
+  }
+
+  .user-name {
+    color: $color-white;
+    padding-right: 20px;
+    font-weight: 300;
+  }
+
+  .social-name {
+    color: $color-purple;
+  }
+
+  .social-users {
+    font-weight: $font-light;
+    font-size: 2em;
   }
 
  
