@@ -355,14 +355,71 @@ a {
   text-decoration: none;
 }
 
+li {
+  list-style-type: none;
+  color: #656565;
+}
+
+li.active {
+  color: #fff;
+  background-color: #81c98f;
+}
+
+h1 {
+  padding: 0 12px;
+  font-size: 1.5em;
+}
+
+h1 span {
+  color: #fff;
+}
+
+.dashboard-word {
+  font-size: 1.25em;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 .alert-text {
   font-weight: 700;
   color: #fff;
-  padding: 0px 12px;
+  padding-right: 1em;
 }
 
-body * {
-  min-height: 60px;
+.alert-message,
+.alert-x {
+  color: #fff;
+  padding: 0 0.5em;
+}
+
+.alert-x {
+  cursor: pointer;
+}
+
+.user-pic {
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.bell {
+  stroke: #fff;
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+}
+
+.social-icon {
+  height: 20px;
+  width: 20px;
+  color: white;
+  background-color: blue;
 }
 
 .border {
@@ -386,17 +443,86 @@ main {
   background-color: #404c72;
 }
 
+.padded {
+  padding: 5px 15px;
+}
+
 .dashboard-header {
   grid-area: dh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #f4f4f4;
+}
+
+.dashboard-title {
+  background-color: #fff;
+  padding: 16px;
+  width: 100%;
+}
+
+.account-info,
+.user-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.search-container {
+  padding: 16px;
 }
 
 .alert {
   grid-area: alert;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+}
+
+.alert-bar {
+  background-color: #7477bf;
+  padding: 8px;
+  width: 95%;
+  height: 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .traffic {
   grid-area: traffic;
+}
+
+.traffic-options {
+  display: flex;
+  justify-content: center;
+}
+
+.traffic-options ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-inline-start: 0;
+  max-width: 316px;
+}
+
+.traffic-options li {
+  padding: 0.25em 1em;
+  border-radius: 20px;
+}
+
+.full-chart {
+  position: relative;
+  height: 20vh;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.half-chart {
+  position: relative;
+  height: 20vh;
+  width: 90vw;
+  margin: 0 auto;
 }
 
 .daily-traffic {
@@ -411,7 +537,7 @@ main {
   grid-area: social;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -441,15 +567,11 @@ main {
   grid-template-areas: "dh" "alert" "traffic" "daily" "users" "social" "members" "activity" "message" "settings";
 }
 
-.alert-bar {
-  background-color: #7477bf;
-  padding: 20px 0px;
-  width: 90vw;
-  color: #fff;
-}
-
 .section-header {
-  width: 80vw;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .social-card {
@@ -476,6 +598,34 @@ main {
 
   .social-card {
     width: 24vw;
+  }
+
+  .dashboard-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .dashboard-title {
+    width: 20%;
+    border-right: 1px solid #b2b2b2;
+  }
+
+  .section-header {
+    flex-direction: row;
+  }
+
+  .full-chart {
+    width: 100%;
+  }
+
+  .half-chart {
+    position: relative;
+    height: 20vh;
+    width: 45vw;
+  }
+
+  .traffic-options ul {
+    max-width: none;
   }
 }
 @media (min-width: 1024px) {

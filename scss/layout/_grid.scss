@@ -1,7 +1,3 @@
-body * {
-    min-height: 60px;
-}
-
 .border {
     border: 1px solid $color-grey;
 }
@@ -23,17 +19,86 @@ main {
     background-color: $color-dark-purple;
   }
 
+.padded {
+    padding: 5px 15px;
+}
+
 .dashboard-header {
     grid-area: dh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: $color-light-grey;
+}
+
+.dashboard-title {
+    background-color: $color-white;
+    padding: 16px;
+    width: 100%;
+}
+
+.account-info,
+.user-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.search-container {
+    padding: 16px;
 }
 
 .alert {
     grid-area: alert;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
 }
+
+.alert-bar {
+    background-color: $color-purple;
+    padding: 8px;
+    width: 95%;
+    height: 32px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
 .traffic {
     grid-area: traffic;
+}
+
+.traffic-options {
+    display: flex;
+    justify-content: center;
+}
+
+.traffic-options ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-inline-start: 0;
+    max-width: 316px;
+}
+
+.traffic-options li {
+    padding: .25em 1em;
+    border-radius: 20px;
+}
+
+.full-chart {
+    position: relative;
+    height: 20vh;
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.half-chart {
+    position: relative; 
+    height: 20vh;
+    width: 90vw;
+    margin: 0 auto;
 }
 
 .daily-traffic {
@@ -48,7 +113,7 @@ main {
     grid-area: social;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 
@@ -91,15 +156,11 @@ body {
       "settings";
   }
 
-  .alert-bar {
-    background-color: $color-purple;
-    padding: 20px 0px;
-    width: 90vw;
-    color: $color-white;
-  }
-
   .section-header {
-      width: 80vw;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
   }
 
   .social-card {
@@ -131,8 +192,37 @@ body {
     .social-stats {
         flex-direction: row;
     }
+ 
     .social-card {
         width: 24vw;
+    }
+
+    .dashboard-header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .dashboard-title {
+        width: 20%;
+        border-right: 1px solid $color-grey;
+    }
+
+    .section-header {
+        flex-direction: row;
+    }
+
+    .full-chart {
+        width: 100%;
+    }
+
+    .half-chart {
+        position: relative; 
+        height: 20vh;
+        width: 45vw;
+    }
+
+    .traffic-options ul {
+        max-width: none;
     }
 }
   @media (min-width: $large) {
