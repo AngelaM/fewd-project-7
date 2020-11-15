@@ -32,18 +32,33 @@
     z-index: 999;
 }
 
-.social-icon {
+.social-circle {
+    background-color: $color-purple;
     height: 60px;
     width: 60px;
+    border-radius: 50%;
 }
 
-.social-circle {
-    fill: $color-purple;
+.social-circle img {
+    height: 36px;
+    width: 36px;
+    position: relative;
+    top: 12px; left: 12px;
 }
 
-.social-logo {
-    fill: $color-white;
+.pic img {
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    margin: 10px;
 }
 
+.arrow i {
+    height: 30px;
+    width: 30px;
+    margin: 10px;
+    color: $color-grey;
+    text-align: center;
+}
 
 

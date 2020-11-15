@@ -11,7 +11,7 @@ var trafficChart = new Chart(chart1, {
             pointBackgroundColor: 'white',
             pointBorderColor: '#7477bf',
             pointRadius: 5,
-            backgroundColor: '#e2e3f6',
+            backgroundColor: 'rgba(226,227,246,0.75)',
             borderColor: '#7477bf'
         }]
     },

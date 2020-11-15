@@ -1,11 +1,24 @@
 
+/* -------------- Grid Areas -------------- */
+
+/* ---- Main Content Area ---- */
+
 main {
     grid-area: main;
 }
 
-canvas {
-    padding: 16px;
+.section-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
+.padded {
+    padding: 5px 15px;
+}
+
+/* ---- Header ---- */
 
 .main-header {
     grid-area: header;
@@ -18,6 +31,7 @@ canvas {
 
 .account-info {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: flex-end;
     width: 50vw;
@@ -31,6 +45,7 @@ canvas {
 
 .user-info {
       display: flex;
+      flex-direction: row;
       align-items: center;
       justify-content: flex-start;
       border-left: 2px solid $color-dark-purple;
@@ -39,6 +54,8 @@ canvas {
 .user-pic-bg {
       margin: 0 10px;
 }
+
+/* ---- Page Navigation ---- */
 
 .main-nav {
     grid-area: nav;
@@ -59,9 +76,15 @@ canvas {
     margin: 0 16px;
 }
 
-.padded {
-    padding: 5px 15px;
+.main-nav li {
+    stroke: $color-dark-purple;
+    stroke-width: 0.5px;
+    fill: $color-white;
+    height: 30px;
+    width: 30px;
 }
+
+/* ---- Dashboard Header and Search Bar ---- */
 
 .dashboard-header {
     grid-area: dh;
@@ -113,11 +136,7 @@ canvas {
     color: $color-purple;
 }
 
-.account-info,
-.user-info {
-    display: flex;
-    flex-direction: row;
-}
+/* ---- Alerts ---- */
 
 .alert {
     grid-area: alert;
@@ -136,6 +155,27 @@ canvas {
     flex-direction: row;
     justify-content: space-between;
   }
+
+/* ---- Charts ---- */
+
+.full-chart {
+    position: relative;
+    height: 20vh;
+    width: 90vw;
+    margin: 0 auto;
+}
+.half-chart {
+    position: relative; 
+    height: 20vh;
+    width: 90vw;
+    margin: 0 auto;
+}
+
+canvas {
+    padding: 16px;
+}
+
+/* ---- Traffic Chart Area ---- */
 
 .traffic {
     grid-area: traffic;
@@ -159,29 +199,21 @@ canvas {
     border-radius: 20px;
 }
 
-.full-chart {
-    position: relative;
-    height: 20vh;
-    width: 90vw;
-    margin: 0 auto;
-}
-
-.half-chart {
-    position: relative; 
-    height: 20vh;
-    width: 90vw;
-    margin: 0 auto;
-}
+/* ---- Daily Traffic Chart Area ---- */
 
 .daily-traffic {
     grid-area: daily;
     border-top: $border-grey;
 }
 
+/* ---- Mobile Users Chart Area ---- */
+
 .mobile-users {
     grid-area: users;
     border-top: $border-grey;
 }
+
+/* ---- Social Stats ---- */
 
 .social-stats {
     grid-area: social;
@@ -189,36 +221,123 @@ canvas {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex-wrap: wrap;
+}
+
+.social-cards-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .social-card {
     background-color: $color-light-grey;
-    border: 1px solid $color-grey;
-    height: 20px;
-    width: 80vw;
-    display: inline-block;
+    border: $border-grey;
+    height: 92px;
+    width: 72vw;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
 }
+
+.social-data {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-icon {
+    height: 60px;
+    width: 60px;
+    margin: 0 30px;
+}
+
+/* ---- New Members ---- */
 
 .new-members {
     grid-area: members;
     border-top: $border-grey;
+    display: flex;
+    flex-direction: column;
 }
+
+.new-member-notices {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-member {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.left {
+    display: flex;
+    flex-direction: row;
+}
+
+.new-member:nth-child(-n+3) {
+    border-bottom: $border-grey;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.date-added {
+    height: 65px;
+    line-height: 65px;
+    margin-right: 10px;
+}
+
+/* ---- Recent Activitgy ---- */
 
 .recent-activity {
     grid-area: activity;
     border-top: $border-grey;
 }
 
+.activity-notices {
+    display: flex;
+    flex-direction: column;
+}
+
+.activity {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.activity:nth-child(-n+3) {
+    border-bottom: $border-grey;
+}
+
+.arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---- Message User ---- */
+
 .message-user {
     grid-area: message;
     border-top: $border-grey;
 }
 
+/* ---- Settings ---- */
+
 .settings {
     grid-area: settings;
     border-top: $border-grey;
 }
+
+
+/* -------------- Grid Layout -------------- */
 
 body {
     display: grid;
@@ -243,12 +362,9 @@ body {
       "settings";
   }
 
-  .section-header {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-  }
+/* -------------- Media Queries -------------- */
+
+/* ---- Medium and Large Screens ---- */
 
   @media (min-width: $medium) {
     body {
@@ -274,13 +390,13 @@ body {
         width: 32vw;
     }
 
-    .social-stats {
+    .social-cards-section {
         flex-direction: row;
         justify-content: space-between;
     }
- 
+     
     .social-card {
-        width: 24vw;
+        width: 28vw;
     }
 
     .dashboard-header {
@@ -323,6 +439,9 @@ body {
         border-right: $border-grey;
     }
 }
+
+/* ---- Large Screens ---- */
+
   @media (min-width: $large) {
     body {
         grid-template-columns: 1fr 1fr;

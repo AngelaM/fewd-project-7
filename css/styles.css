@@ -423,6 +423,15 @@ input {
   font-size: 2em;
 }
 
+.email {
+  color: #7477bf;
+}
+
+.new-member,
+.activity {
+  font-size: 0.9em;
+}
+
 .user-pic-bg {
   background-color: #f4f4f4;
   border-radius: 50%;
@@ -459,27 +468,54 @@ input {
   z-index: 999;
 }
 
-.social-icon {
+.social-circle {
+  background-color: #7477bf;
   height: 60px;
   width: 60px;
+  border-radius: 50%;
 }
 
-.social-circle {
-  fill: #7477bf;
+.social-circle img {
+  height: 36px;
+  width: 36px;
+  position: relative;
+  top: 12px;
+  left: 12px;
 }
 
-.social-logo {
-  fill: #fff;
+.pic img {
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  margin: 10px;
 }
 
+.arrow i {
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+  color: #b2b2b2;
+  text-align: center;
+}
+
+/* -------------- Grid Areas -------------- */
+/* ---- Main Content Area ---- */
 main {
   grid-area: main;
 }
 
-canvas {
-  padding: 16px;
+.section-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+.padded {
+  padding: 5px 15px;
+}
+
+/* ---- Header ---- */
 .main-header {
   grid-area: header;
   background-color: #7477bf;
@@ -491,6 +527,7 @@ canvas {
 
 .account-info {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: flex-end;
   width: 50vw;
@@ -504,6 +541,7 @@ canvas {
 
 .user-info {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   border-left: 2px solid #404c72;
@@ -513,6 +551,7 @@ canvas {
   margin: 0 10px;
 }
 
+/* ---- Page Navigation ---- */
 .main-nav {
   grid-area: nav;
   background-color: #404c72;
@@ -532,10 +571,15 @@ canvas {
   margin: 0 16px;
 }
 
-.padded {
-  padding: 5px 15px;
+.main-nav li {
+  stroke: #404c72;
+  stroke-width: 0.5px;
+  fill: #fff;
+  height: 30px;
+  width: 30px;
 }
 
+/* ---- Dashboard Header and Search Bar ---- */
 .dashboard-header {
   grid-area: dh;
   display: flex;
@@ -586,12 +630,7 @@ canvas {
   color: #7477bf;
 }
 
-.account-info,
-.user-info {
-  display: flex;
-  flex-direction: row;
-}
-
+/* ---- Alerts ---- */
 .alert {
   grid-area: alert;
   display: flex;
@@ -610,6 +649,26 @@ canvas {
   justify-content: space-between;
 }
 
+/* ---- Charts ---- */
+.full-chart {
+  position: relative;
+  height: 20vh;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.half-chart {
+  position: relative;
+  height: 20vh;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+canvas {
+  padding: 16px;
+}
+
+/* ---- Traffic Chart Area ---- */
 .traffic {
   grid-area: traffic;
 }
@@ -632,67 +691,137 @@ canvas {
   border-radius: 20px;
 }
 
-.full-chart {
-  position: relative;
-  height: 20vh;
-  width: 90vw;
-  margin: 0 auto;
-}
-
-.half-chart {
-  position: relative;
-  height: 20vh;
-  width: 90vw;
-  margin: 0 auto;
-}
-
+/* ---- Daily Traffic Chart Area ---- */
 .daily-traffic {
   grid-area: daily;
   border-top: 1px solid #b2b2b2;
 }
 
+/* ---- Mobile Users Chart Area ---- */
 .mobile-users {
   grid-area: users;
   border-top: 1px solid #b2b2b2;
 }
 
+/* ---- Social Stats ---- */
 .social-stats {
   grid-area: social;
   border-top: 1px solid #b2b2b2;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex-wrap: wrap;
+}
+
+.social-cards-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .social-card {
   background-color: #f4f4f4;
   border: 1px solid #b2b2b2;
-  height: 20px;
-  width: 80vw;
-  display: inline-block;
+  height: 92px;
+  width: 72vw;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  align-items: center;
 }
 
+.social-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-icon {
+  height: 60px;
+  width: 60px;
+  margin: 0 30px;
+}
+
+/* ---- New Members ---- */
 .new-members {
   grid-area: members;
   border-top: 1px solid #b2b2b2;
+  display: flex;
+  flex-direction: column;
 }
 
+.new-member-notices {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-member {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  flex-direction: row;
+}
+
+.new-member:nth-child(-n+3) {
+  border-bottom: 1px solid #b2b2b2;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.date-added {
+  height: 65px;
+  line-height: 65px;
+  margin-right: 10px;
+}
+
+/* ---- Recent Activitgy ---- */
 .recent-activity {
   grid-area: activity;
   border-top: 1px solid #b2b2b2;
 }
 
+.activity-notices {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.activity:nth-child(-n+3) {
+  border-bottom: 1px solid #b2b2b2;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---- Message User ---- */
 .message-user {
   grid-area: message;
   border-top: 1px solid #b2b2b2;
 }
 
+/* ---- Settings ---- */
 .settings {
   grid-area: settings;
   border-top: 1px solid #b2b2b2;
 }
 
+/* -------------- Grid Layout -------------- */
 body {
   display: grid;
   grid-template-areas: "header" "nav" "main";
@@ -703,13 +832,8 @@ main {
   grid-template-areas: "dh" "alert" "traffic" "daily" "users" "social" "members" "activity" "message" "settings";
 }
 
-.section-header {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
+/* -------------- Media Queries -------------- */
+/* ---- Medium and Large Screens ---- */
 @media (min-width: 768px) {
   body {
     grid-template-areas: "header" "nav" "main";
@@ -724,13 +848,13 @@ main {
     width: 32vw;
   }
 
-  .social-stats {
+  .social-cards-section {
     flex-direction: row;
     justify-content: space-between;
   }
 
   .social-card {
-    width: 24vw;
+    width: 28vw;
   }
 
   .dashboard-header {
@@ -773,6 +897,7 @@ main {
     border-right: 1px solid #b2b2b2;
   }
 }
+/* ---- Large Screens ---- */
 @media (min-width: 1024px) {
   body {
     grid-template-columns: 1fr 1fr;
@@ -792,13 +917,6 @@ main {
   .main-nav li {
     margin: 16px 0;
   }
-}
-.main-nav li {
-  stroke: #404c72;
-  stroke-width: 0.5px;
-  fill: #fff;
-  height: 30px;
-  width: 30px;
 }
 
 /*# sourceMappingURL=styles.css.map */
