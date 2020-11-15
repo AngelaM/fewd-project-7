@@ -23,6 +23,7 @@
   li.active {
     color: $color-white;
     background-color: $color-lime-green;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.18), 0 4px 6px 0 rgba(0, 0, 0, 0.16)
   }
 
   h1 {
@@ -90,8 +91,6 @@
   .activity {
     font-size: .9em;
   }
-
- 
   
 
 

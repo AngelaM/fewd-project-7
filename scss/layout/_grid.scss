@@ -154,6 +154,7 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.18), 0 4px 10px 0 rgba(0, 0, 0, 0.16);
   }
 
 /* ---- Charts ---- */
@@ -240,6 +241,7 @@ canvas {
     margin-top: 10px;
     margin-bottom: 10px;
     align-items: center;
+    box-shadow: 0 3px 6px 0 rgba(104, 76, 76, 0.2), 0 4px 12px 0 rgba(0, 0, 0, 0.12);
 }
 
 .social-data {
@@ -327,6 +329,34 @@ canvas {
 .message-user {
     grid-area: message;
     border-top: $border-grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 300px;
+}
+
+.message-user form,
+.settings form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 232px;
+}
+
+.message-user input {
+    background-color: $color-light-grey;
+    border: $border-grey;
+    font-size: .9em;
+}
+
+#search-user {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#message {
+    padding-top: 8px;
+    padding-bottom: 80px;
 }
 
 /* ---- Settings ---- */
@@ -334,7 +364,26 @@ canvas {
 .settings {
     grid-area: settings;
     border-top: $border-grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 300px;
 }
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.toggle {
+    display: block;
+}
+
+.toggle-text {
+    display: inline-block;
+    width: 40%;
+}
+
 
 
 /* -------------- Grid Layout -------------- */

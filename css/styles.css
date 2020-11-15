@@ -364,6 +364,7 @@ li {
 li.active {
   color: #fff;
   background-color: #81c98f;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.18), 0 4px 6px 0 rgba(0, 0, 0, 0.16);
 }
 
 h1 {
@@ -440,6 +441,7 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.18), 0 4px 10px 0 rgba(0, 0, 0, 0.16);
 }
 
 .user-pic {
@@ -488,6 +490,7 @@ input {
   height: 45px;
   width: 45px;
   margin: 10px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.18), 0 4px 8px 0 rgba(0, 0, 0, 0.16);
 }
 
 .arrow i {
@@ -496,6 +499,30 @@ input {
   margin: 10px;
   color: #b2b2b2;
   text-align: center;
+}
+
+.message-user button,
+.settings button {
+  padding: 10px 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0 3px 6px 0 rgba(104, 76, 76, 0.2), 0 4px 12px 0 rgba(0, 0, 0, 0.12);
+}
+
+.settings button {
+  width: 48%;
+}
+
+button.purple {
+  background-color: #7477bf;
+  color: #fff;
+}
+
+button.grey {
+  background-color: #b2b2b2;
+  color: #fff;
 }
 
 /* -------------- Grid Areas -------------- */
@@ -647,6 +674,7 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.18), 0 4px 10px 0 rgba(0, 0, 0, 0.16);
 }
 
 /* ---- Charts ---- */
@@ -729,6 +757,7 @@ canvas {
   margin-top: 10px;
   margin-bottom: 10px;
   align-items: center;
+  box-shadow: 0 3px 6px 0 rgba(104, 76, 76, 0.2), 0 4px 12px 0 rgba(0, 0, 0, 0.12);
 }
 
 .social-data {
@@ -813,12 +842,59 @@ canvas {
 .message-user {
   grid-area: message;
   border-top: 1px solid #b2b2b2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 300px;
+}
+
+.message-user form,
+.settings form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 232px;
+}
+
+.message-user input {
+  background-color: #f4f4f4;
+  border: 1px solid #b2b2b2;
+  font-size: 0.9em;
+}
+
+#search-user {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+#message {
+  padding-top: 8px;
+  padding-bottom: 80px;
 }
 
 /* ---- Settings ---- */
 .settings {
   grid-area: settings;
   border-top: 1px solid #b2b2b2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 300px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.toggle {
+  display: block;
+}
+
+.toggle-text {
+  display: inline-block;
+  width: 40%;
 }
 
 /* -------------- Grid Layout -------------- */

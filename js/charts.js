@@ -54,8 +54,13 @@ var dailyTrafficChart = new Chart(chart2, {
         datasets: [{
             data: [50, 75, 150, 100, 200, 175, 75],
             backgroundColor: '#7477bf',
-            hoverBackgroundColor: 'rgba(64, 76, 114, .9)',
-            barPercentage: .6
+            hoverBackgroundColor: 'rgba(64, 76, 114, .85)',
+            barPercentage: .6,
+            borderColor: 'rgba(220, 220, 220, .9)',
+            borderWidth: {
+                top: 2,
+                right: 3.5,
+            },
         }]
     },
     options: {
@@ -98,7 +103,8 @@ var mobileUsersChart = new Chart(chart3, {
             data: [70, 16, 14],
             backgroundColor: ['#7477bf', '#81c98f', '#74b1b2'],
             hoverBackgroundColor: ['rgba(116, 119, 191, .4)', 'rgba(129, 201, 143, .4)', 'rgba(116, 177, 178, .4)'],
-            borderWidth: 0
+            borderWidth: 2,
+            borderColor: 'rgba(220, 220, 220, .9)'
         }]
     },
     options: {
