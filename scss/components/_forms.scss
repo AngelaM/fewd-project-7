@@ -19,6 +19,14 @@ button.purple {
     color: $color-white;
 }
 
+button.purple:hover {
+  background-color: $color-lime-green;
+}
+
+button.grey:hover {
+  background-color: $color-dark-grey;
+}
+
 button.grey {
     background-color: $color-grey;
     color: $color-white;

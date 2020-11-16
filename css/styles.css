@@ -440,6 +440,11 @@ select {
   font-weight: 300;
 }
 
+#error {
+  color: red;
+  margin-bottom: 10px;
+}
+
 .user-pic-bg {
   background-color: #f4f4f4;
   border-radius: 50%;
@@ -572,6 +577,14 @@ button.purple {
   color: #fff;
 }
 
+button.purple:hover {
+  background-color: #81c98f;
+}
+
+button.grey:hover {
+  background-color: #656565;
+}
+
 button.grey {
   background-color: #b2b2b2;
   color: #fff;
@@ -652,8 +665,15 @@ input:checked + .slider:before {
 
 /* -------------- Grid Areas -------------- */
 /* ---- Main Content Area ---- */
+body {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
 main {
   grid-area: main;
+  overflow-y: scroll;
 }
 
 .section-header {
@@ -858,6 +878,10 @@ canvas {
 .traffic-options li {
   padding: 0.25em 1em;
   border-radius: 20px;
+}
+
+.traffic-menu li {
+  cursor: pointer;
 }
 
 /* ---- Daily Traffic Chart Area ---- */
@@ -1137,6 +1161,7 @@ main {
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
+    height: 360px;
   }
 
   .main-nav li {

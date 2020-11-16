@@ -1,5 +1,8 @@
 
-//change color and border of active navigation link
+/********
+ * Change color and border of active navigation link
+ ********/
+
 let list = document.querySelectorAll('.main-nav li');
 
 let nav = document.querySelector('li div.nav-settings').parentElement;
@@ -26,7 +29,25 @@ nav3.addEventListener('click', () => {
     nav3.setAttribute('id', 'current');
 });
 
-//when alert "x" is clicked, hide alert and decrease alert area height
+/********
+ * Drop-down notification window when bell clicked
+ ********/
+
+ let notices = [
+     'Notice 1: Your post has been liked!', 
+    'Notice 2: Update your password'
+];
+
+let dropDown = document.querySelector('.notification-drop-down');
+let bell = document.querySelector('.alert-bell');
+bell.onclick = function makeNotifications() {
+    console.log('success');
+};
+
+/********
+ * When alert "x" is clicked, hide alert and decrease alert area height
+ ********/
+
 let x = document.querySelector('.alert-x');
 x.addEventListener('click', () => {
     let alertBar = document.querySelector('.alert-bar');
@@ -35,8 +56,11 @@ x.addEventListener('click', () => {
     alertArea.style.height = "10px";
 });              
 
-//insert new member notices into New Members section
+/********
+ * Insert new member notices into New Members section and activity notices into Recent Activity section
+ ********/
 
+ //data
 let members = [
     {
         name: 'Victoria Chambers',
@@ -63,7 +87,6 @@ let members = [
         picture: 'img/avatars/member-4.jpg'
     }
 ];
-
 let activities = [
     {
         member: 'Victoria Chambers',
@@ -91,6 +114,7 @@ let activities = [
     }
 ];
 
+//
 let memberSection = document.querySelector('.new-member-notices');
 let html = "";
 for (let i=0; i<members.length; i++) {
@@ -124,8 +148,34 @@ html2 +=      `<div class="activity">
         }
 activitySection.innerHTML = html2;
 
-//Confirmation when Send button clicked
+/********
+ * Confirmation when Send button clicked
+ ********/
 
 function confirmation() {
     alert("Your message has been sent!");
 }
+
+/********
+ * Message user form validation
+ ********/
+
+//Create error message and hide
+let messageHeader = document.querySelector('.message-user div.section-header');
+let nameWarning = document.createElement('div');
+nameWarning.setAttribute('id', 'error');
+nameWarning.innerHTML = "Enter valid user and message";
+messageHeader.insertAdjacentElement('afterend', nameWarning);
+document.querySelector('#error').style.display = "none";
+
+//Validate fields and display error message when needed
+document.querySelector('.message-user-form').addEventListener('submit', function (e) {
+    if (document.querySelector("#search-user").value !== ""&& document.querySelector('#message').value !=="") {
+        confirm("Do you want to send this message?");
+    }
+    else {
+        document.querySelector('#error').style.display = "block";
+        e.preventDefault();
+    }
+
+});
