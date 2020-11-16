@@ -1,4 +1,31 @@
 
+//change color and border of active navigation link
+let list = document.querySelectorAll('.main-nav li');
+
+let nav = document.querySelector('li div.nav-settings').parentElement;
+nav.addEventListener('click', () => {
+    for (let i=0; i<list.length; i++) {
+        list[i].removeAttribute('id');
+    }
+    nav.setAttribute('id', 'current');
+});
+
+let nav2 = document.querySelector('li div.nav-members').parentElement;
+nav2.addEventListener('click', () => {
+    for (let i=0; i<list.length; i++) {
+        list[i].removeAttribute('id');
+    }
+    nav2.setAttribute('id', 'current');
+});
+
+let nav3 = document.querySelector('li div.nav-visits').parentElement;
+nav3.addEventListener('click', () => {
+    for (let i=0; i<list.length; i++) {
+        list[i].removeAttribute('id');
+    }
+    nav3.setAttribute('id', 'current');
+});
+
 //when alert "x" is clicked, hide alert and decrease alert area height
 let x = document.querySelector('.alert-x');
 x.addEventListener('click', () => {
@@ -72,7 +99,7 @@ html +=      `<div class="new-member">
                     <div class="pic"><img src="${members[i].picture}" alt="${members[i].name}"></div>
                     <div class="info">
                         <div class="name">${members[i].name}</div>
-                        <div class="email">${members[i].email}</div>
+                        <div class="email"><a href = "mailto: ${members[i].email}">${members[i].email}</a></div>
                     </div>
                 </div>
                 <div class="date-added">${members[i].dateAdded}</div>
@@ -84,7 +111,6 @@ let activitySection = document.querySelector('.activity-notices');
 let html2 = "";
 for (let i=0; i<members.length; i++) {
 let pic = members.find(member => member.name == activities[i].member);
-console.log(pic);
 html2 +=      `<div class="activity">
                 <div class="left">
                     <div class="pic"><img src="${pic.picture}" alt="${pic.name}"></div>
@@ -96,5 +122,10 @@ html2 +=      `<div class="activity">
                 <div class="arrow"><i class="fa fa-chevron-right"></i></div>
             </div>`;
         }
-        console.log(html2);
 activitySection.innerHTML = html2;
+
+//Confirmation when Send button clicked
+
+function confirmation() {
+    alert("Your message has been sent!");
+}

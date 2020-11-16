@@ -395,17 +395,20 @@ h2 {
   padding-right: 1em;
 }
 
-.alert-message,
-.alert-x {
+.alert-message {
   color: #fff;
   padding: 0 0.5em;
 }
 
 .alert-x {
   cursor: pointer;
+  padding: 0 0.5em 0.5em 0;
+  color: #fff;
 }
 
-input {
+input,
+textarea,
+select {
   font-weight: 300;
 }
 
@@ -424,13 +427,17 @@ input {
   font-size: 2em;
 }
 
-.email {
+.email a {
   color: #7477bf;
 }
 
 .new-member,
 .activity {
   font-size: 0.9em;
+}
+
+.toggle-text {
+  font-weight: 300;
 }
 
 .user-pic-bg {
@@ -457,6 +464,45 @@ input {
   height: 30px;
   width: 30px;
   margin: 10px 20px 10px 10px;
+}
+
+@keyframes ring {
+  0% {
+    transform: rotate(-15deg);
+  }
+  5% {
+    transform: rotate(15deg);
+  }
+  10% {
+    transform: rotate(-20deg);
+  }
+  15% {
+    transform: rotate(20deg);
+  }
+  20% {
+    transform: rotate(-25deg);
+  }
+  25% {
+    transform: rotate(25deg);
+  }
+  30% {
+    transform: rotate(-20deg);
+  }
+  35% {
+    transform: rotate(20deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  45% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+}
+.bell:hover {
+  animation: ring 2s ease forwards;
 }
 
 .green-dot {
@@ -501,6 +547,12 @@ input {
   text-align: center;
 }
 
+.main-nav svg {
+  height: 38px;
+  width: 38px;
+}
+
+/* BUTTONS */
 .message-user button,
 .settings button {
   padding: 10px 0;
@@ -523,6 +575,79 @@ button.purple {
 button.grey {
   background-color: #b2b2b2;
   color: #fff;
+}
+
+/* SLIDERS */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 32px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #b2b2b2;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #7477bf;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #7477bf;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(46px);
+  -ms-transform: translateX(46px);
+  transform: translateX(46px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.slider-text {
+  height: 32px;
+  line-height: 32px;
+  margin-left: 7px;
+  font-size: 0.8em;
+  color: #fff;
+  font-weight: 700;
 }
 
 /* -------------- Grid Areas -------------- */
@@ -571,14 +696,14 @@ main {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  border-left: 2px solid #404c72;
+  border-left: 1px solid #404c72;
 }
 
 .user-pic-bg {
   margin: 0 10px;
 }
 
-/* ---- Page Navigation ---- */
+/* ---- Main Navigation ---- */
 .main-nav {
   grid-area: nav;
   background-color: #404c72;
@@ -591,19 +716,35 @@ main {
   flex-direction: row;
   margin: 0;
   justify-content: center;
-  padding: 10px 0;
+  padding-left: 0;
 }
 
 .main-nav li {
-  margin: 0 16px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-bottom: 3px solid #404c72;
+  z-index: 999;
 }
 
-.main-nav li {
+.main-nav li#current {
+  border-bottom: 3px solid #81c98f;
+  border-radius: 2px;
+}
+
+.main-nav li div {
+  margin: 8px 2px;
+  display: flex;
+  align-items: center;
+}
+
+.main-nav a {
   stroke: #404c72;
   stroke-width: 0.5px;
+  fill: #b2b2b2;
+}
+
+.main-nav li#current a {
   fill: #fff;
-  height: 30px;
-  width: 30px;
 }
 
 /* ---- Dashboard Header and Search Bar ---- */
@@ -670,7 +811,7 @@ main {
   background-color: #7477bf;
   padding: 8px;
   width: 95%;
-  height: 32px;
+  height: 34px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -856,20 +997,18 @@ canvas {
   min-height: 232px;
 }
 
-.message-user input {
+.message-user input,
+.message-user textarea,
+.timezones {
   background-color: #f4f4f4;
   border: 1px solid #b2b2b2;
   font-size: 0.9em;
 }
 
-#search-user {
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
-
+#search-user,
+.timezones,
 #message {
-  padding-top: 8px;
-  padding-bottom: 80px;
+  padding: 8px;
 }
 
 /* ---- Settings ---- */
@@ -890,6 +1029,15 @@ canvas {
 
 .toggle {
   display: block;
+}
+
+.toggle:nth-child(odd) {
+  margin-top: 12px;
+  margin-bottom: 4px;
+}
+
+.toggle:nth-child(even) {
+  margin-bottom: 16px;
 }
 
 .toggle-text {
@@ -930,7 +1078,7 @@ main {
   }
 
   .social-card {
-    width: 28vw;
+    width: 30vw;
   }
 
   .dashboard-header {
@@ -960,7 +1108,7 @@ main {
   .half-chart {
     position: relative;
     height: 20vh;
-    width: 44vw;
+    width: 42vw;
   }
 
   .traffic-options ul {
@@ -976,7 +1124,7 @@ main {
 /* ---- Large Screens ---- */
 @media (min-width: 1024px) {
   body {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 80px 1fr;
     grid-template-areas: "header header" "nav main";
   }
 
@@ -988,10 +1136,29 @@ main {
   .main-nav ul {
     flex-direction: column;
     justify-content: flex-start;
+    width: 100%;
   }
 
   .main-nav li {
-    margin: 16px 0;
+    margin-top: 30px;
+    margin-left: 0;
+    margin-right: 0;
+    border-left: 3px solid #404c72;
+    border-bottom: none;
+  }
+
+  .main-nav li#current {
+    border-left: 3px solid #81c98f;
+    border-bottom: none;
+  }
+
+  .main-nav li div {
+    margin: 2px auto;
+    justify-content: center;
+  }
+
+  .social-card {
+    width: 26vw;
   }
 }
 

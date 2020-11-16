@@ -48,14 +48,14 @@ main {
       flex-direction: row;
       align-items: center;
       justify-content: flex-start;
-      border-left: 2px solid $color-dark-purple;
+      border-left: 1px solid $color-dark-purple;
 }
 
 .user-pic-bg {
       margin: 0 10px;
 }
 
-/* ---- Page Navigation ---- */
+/* ---- Main Navigation ---- */
 
 .main-nav {
     grid-area: nav;
@@ -69,19 +69,35 @@ main {
     flex-direction: row;
     margin: 0;
     justify-content: center;
-    padding: 10px 0;
+    padding-left: 0;
 }
 
 .main-nav li {
-    margin: 0 16px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom: 3px solid $color-dark-purple;
+    z-index: 999;
 }
 
-.main-nav li {
+.main-nav li#current{
+    border-bottom: 3px solid $color-lime-green;
+    border-radius: 2px;
+}
+
+.main-nav li div {
+    margin: 8px 2px;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav a {
     stroke: $color-dark-purple;
     stroke-width: 0.5px;
+    fill: $color-grey;
+}
+
+.main-nav li#current a{
     fill: $color-white;
-    height: 30px;
-    width: 30px;
 }
 
 /* ---- Dashboard Header and Search Bar ---- */
@@ -150,7 +166,7 @@ main {
     background-color: $color-purple;
     padding: 8px;
     width: 95%;
-    height: 32px;
+    height: 34px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -343,21 +359,20 @@ canvas {
     min-height: 232px;
 }
 
-.message-user input {
+.message-user input,
+.message-user textarea,
+.timezones {
     background-color: $color-light-grey;
     border: $border-grey;
     font-size: .9em;
 }
 
-#search-user {
-    padding-top: 8px;
-    padding-bottom: 8px;
+#search-user,
+.timezones,
+#message {
+    padding: 8px;
 }
 
-#message {
-    padding-top: 8px;
-    padding-bottom: 80px;
-}
 
 /* ---- Settings ---- */
 
@@ -377,6 +392,15 @@ canvas {
 }
 .toggle {
     display: block;
+}
+
+.toggle:nth-child(odd) {
+    margin-top: 12px;
+    margin-bottom: 4px;
+}
+
+.toggle:nth-child(even) {
+    margin-bottom: 16px;
 }
 
 .toggle-text {
@@ -445,7 +469,7 @@ body {
     }
      
     .social-card {
-        width: 28vw;
+        width: 30vw;
     }
 
     .dashboard-header {
@@ -475,7 +499,7 @@ body {
     .half-chart {
         position: relative; 
         height: 20vh;
-        width: 44vw;
+        width: 42vw;
     }
 
     .traffic-options ul {
@@ -493,7 +517,7 @@ body {
 
   @media (min-width: $large) {
     body {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 80px 1fr;
         grid-template-areas: 
           "header header"
           "nav main"
@@ -513,10 +537,29 @@ body {
     .main-nav ul {
         flex-direction: column;
         justify-content: flex-start;
+        width: 100%
     }
 
     .main-nav li {
-        margin: 16px 0;
+        margin-top: 30px;
+        margin-left: 0;
+        margin-right: 0;
+        border-left: 3px solid $color-dark-purple;
+        border-bottom: none;
+    }
+
+    .main-nav li#current{
+        border-left: 3px solid $color-lime-green;
+        border-bottom: none;
+    }
+
+    .main-nav li div {
+        margin: 2px auto;
+        justify-content: center
+    }
+
+    .social-card {
+        width: 26vw;
     }
 }
 

@@ -54,17 +54,20 @@
     padding-right: 1em;
   }
 
-  .alert-message,
-  .alert-x {
+  .alert-message {
     color: $color-white;
     padding: 0 .5em;
   }
 
   .alert-x {
-    cursor: pointer;
+    cursor: pointer; 
+    padding: 0 .5em .5em 0;
+    color: $color-white;
   }
 
-  input {
+  input,
+  textarea,
+  select {
     font-weight: 300;
   }
 
@@ -83,13 +86,17 @@
     font-size: 2em;
   }
 
-  .email {
+  .email a{
     color: $color-purple;
   }
 
   .new-member,
   .activity {
     font-size: .9em;
+  }
+
+  .toggle-text {
+    font-weight: $font-light;
   }
   
 
