@@ -33,6 +33,9 @@ function createChart(chartName, labelsArray, dataArray, element) {
             }]
         },
         options: {
+            animation: {
+                duration: 500
+            },
             maintainAspectRatio: false,
             legend: {
                 display: false
@@ -78,7 +81,7 @@ trafficMenu.addEventListener('click', (e) => {
         liGroup[i].removeAttribute('class');
     }
     li.setAttribute('class', 'active');
-    //display chart with correlating labels and data
+    //display chart with correlating labels and data;
     let chartType = li.textContent;
     if (chartType === 'Hourly') {
         createChart(trafficChartHourly, labelsHourly, dataHourly, chart1);
@@ -113,6 +116,9 @@ var dailyTrafficChart = new Chart(chart2, {
         }]
     },
     options: {
+        animation: {
+            duration: 500
+        },
         maintainAspectRatio: false,
         legend: {
             display: false
@@ -161,6 +167,9 @@ var mobileUsersChart = new Chart(chart3, {
         }]
     },
     options: {
+        animation: {
+            duration: 500
+        },
         maintainAspectRatio: false,
         legend: {
             labels: {

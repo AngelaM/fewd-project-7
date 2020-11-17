@@ -48,6 +48,31 @@ main {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    position: relative;
+}
+
+.notification-drop-down {
+    position: absolute;
+    top: 120px;
+    right: 80px;
+    z-index: 999;
+    background-color: $color-light-grey;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.18), 0 4px 10px 0 rgba(0, 0, 0, 0.16);
+}
+
+.notification-x {
+    width: 100%;
+    cursor: pointer; 
+    padding: 0 .5em .5em 0;
+}
+
+.notification {
+    width: 300px;
+    height: 60px;
+    line-height: 60px;
+    background-color: $color-dark-purple;
+    margin: 6px;
+    padding: 6px;
 }
 
 .user-info {
@@ -69,42 +94,42 @@ main {
     background-color: $color-dark-purple;
     display: flex;
     justify-content: center;
-}
 
-.main-nav ul {
-    display: flex;
-    flex-direction: row;
-    margin: 0;
-    justify-content: center;
-    padding-left: 0;
-}
+    ul {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        justify-content: center;
+        padding-left: 0;
+    }
 
-.main-nav li {
-    margin-left: 10px;
-    margin-right: 10px;
-    border-bottom: 3px solid $color-dark-purple;
-    z-index: 999;
-}
+    li {
+        margin-left: 10px;
+        margin-right: 10px;
+        border-bottom: 3px solid $color-dark-purple;
+        z-index: 999;
 
-.main-nav li#current{
-    border-bottom: 3px solid $color-lime-green;
-    border-radius: 2px;
-}
+        &#current {
+            border-bottom: 3px solid $color-lime-green;
+            border-radius: 2px;
 
-.main-nav li div {
-    margin: 8px 2px;
-    display: flex;
-    align-items: center;
-}
+            a {
+                fill: $color-white;
+            }
+        }
 
-.main-nav a {
-    stroke: $color-dark-purple;
-    stroke-width: 0.5px;
-    fill: $color-grey;
-}
+        div {
+            margin: 8px 2px;
+            display: flex;
+            align-items: center;
+        }
+    }
 
-.main-nav li#current a{
-    fill: $color-white;
+    a {
+        stroke: $color-dark-purple;
+        stroke-width: 0.5px;
+        fill: $color-grey;
+    }
 }
 
 /* ---- Dashboard Header and Search Bar ---- */
@@ -134,29 +159,29 @@ main {
     justify-content: center;
     align-content: center;
     padding: 10px 3%;
-}
 
-.search-container input {
-    width: 260px;
-    padding: 8px;
-    border-top: $border-grey;
-    border-left: $border-grey;
-    border-bottom: $border-grey;
-    border-right: none;
-}
+    input {
+        width: 260px;
+        padding: 8px;
+        border-top: $border-grey;
+        border-left: $border-grey;
+        border-bottom: $border-grey;
+        border-right: none;
+    }
 
-.search-container button {
-    padding: 8px;
-    float: right;
-    border-top: $border-grey;
-    border-right: $border-grey;
-    border-bottom: $border-grey;
-    border-left: none;
-    background-color: $color-white;
-}
+    button {
+        padding: 8px;
+        float: right;
+        border-top: $border-grey;
+        border-right: $border-grey;
+        border-bottom: $border-grey;
+        border-left: none;
+        background-color: $color-white;
+    }
 
-.search-container i {
-    color: $color-purple;
+    i {
+        color: $color-purple;
+    }
 }
 
 /* ---- Alerts ---- */
@@ -208,23 +233,32 @@ canvas {
 .traffic-options {
     display: flex;
     justify-content: center;
-}
 
-.traffic-options ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-inline-start: 0;
-    max-width: 316px;
-}
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0;
+        max-width: 316px;
+    }
 
-.traffic-options li {
-    padding: .25em 1em;
-    border-radius: 20px;
+    li {
+        padding: .25em 1em;
+        border-radius: 20px;
+    }
 }
 
 .traffic-menu li {
     cursor: pointer;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+
+    &.active:hover {
+        transform: scale(1);
+    }
 }
 
 /* ---- Daily Traffic Chart Area ---- */
@@ -323,7 +357,7 @@ canvas {
     margin-right: 10px;
 }
 
-/* ---- Recent Activitgy ---- */
+/* ---- Recent Activity ---- */
 
 .recent-activity {
     grid-area: activity;
@@ -545,30 +579,33 @@ body {
         "message settings";
     }
 
-    .main-nav ul {
+    .main-nav {
+        
+        ul {
         flex-direction: column;
         justify-content: flex-start;
         width: 100%;
         height: 360px;
-    }
+        }
 
-    .main-nav li {
-        margin-top: 30px;
-        margin-left: 0;
-        margin-right: 0;
-        border-left: 3px solid $color-dark-purple;
-        border-bottom: none;
-    }
+        li {
+            margin-top: 30px;
+            margin-left: 0;
+            margin-right: 0;
+            border-left: 3px solid $color-dark-purple;
+            border-bottom: none;
 
-    .main-nav li#current{
-        border-left: 3px solid $color-lime-green;
-        border-bottom: none;
-    }
+            &#current {
+                border-left: 3px solid $color-lime-green;
+                border-bottom: none;
+            }
 
-    .main-nav li div {
-        margin: 2px auto;
-        justify-content: center
-    }
+            div {
+                margin: 2px auto;
+                justify-content: center
+            }
+        }
+}
 
     .social-card {
         width: 26vw;

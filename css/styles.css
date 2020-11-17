@@ -341,7 +341,7 @@ template {
 /* ---- Font Variables ---- */
 /* ---- Media Variables ---- */
 /* ---- Media Variables ---- */
-/* ---- Typography ---- */
+/* ---- Page Elements ---- */
 * {
   font-family: "Montsserat", sans-serif;
   color: #656565;
@@ -356,24 +356,28 @@ a {
   text-decoration: none;
 }
 
-li {
-  list-style-type: none;
-  color: #656565;
-}
-
-li.active {
-  color: #fff;
-  background-color: #81c98f;
-  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.18), 0 4px 6px 0 rgba(0, 0, 0, 0.16);
-}
-
 h1 {
   padding: 0 12px;
   font-size: 1.5em;
 }
-
 h1 span {
   color: #fff;
+}
+
+h2 {
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+li {
+  list-style-type: none;
+  color: #656565;
+}
+li.active {
+  color: #fff;
+  background-color: #81c98f;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.18), 0 4px 6px 0 rgba(0, 0, 0, 0.16);
 }
 
 .dashboard-word {
@@ -383,12 +387,7 @@ h1 span {
   line-height: 35px;
 }
 
-h2 {
-  font-size: 1em;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
+/* ---- Section Elements ---- */
 .alert-text {
   font-weight: 700;
   color: #fff;
@@ -403,6 +402,15 @@ h2 {
 .alert-x {
   cursor: pointer;
   padding: 0 0.5em 0.5em 0;
+  color: #fff;
+}
+
+.notification-x {
+  text-align: right;
+  font-size: 1.2em;
+}
+
+.notification {
   color: #fff;
 }
 
@@ -445,6 +453,7 @@ select {
   margin-bottom: 10px;
 }
 
+/* ---- User Avatar ---- */
 .user-pic-bg {
   background-color: #f4f4f4;
   border-radius: 50%;
@@ -461,8 +470,13 @@ select {
   width: 30px;
   margin: 10px;
   border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+}
+.user-pic:hover {
+  transform: scale(1.2);
 }
 
+/* ---- Bell Icon ---- */
 .bell {
   stroke: #fff;
   stroke-width: 0.8px;
@@ -521,21 +535,43 @@ select {
   z-index: 999;
 }
 
+/* ---- Nav Icons ---- */
+.main-nav svg {
+  height: 38px;
+  width: 38px;
+}
+
+@keyframes grow {
+  40% {
+    transform: scale(1.12);
+  }
+  60% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.08);
+  }
+}
+.main-nav svg:hover {
+  animation: grow 1s ease forwards;
+}
+
+/* ---- Social Stats Icons ---- */
 .social-circle {
   background-color: #7477bf;
   height: 60px;
   width: 60px;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-circle div {
+  height: 40px;
+  width: 40px;
 }
 
-.social-circle img {
-  height: 36px;
-  width: 36px;
-  position: relative;
-  top: 12px;
-  left: 12px;
-}
-
+/* ---- Member Profile Pictures ---- */
 .pic img {
   border-radius: 50%;
   height: 45px;
@@ -544,6 +580,7 @@ select {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.18), 0 4px 8px 0 rgba(0, 0, 0, 0.16);
 }
 
+/* ---- Recent Activity Arrow ---- */
 .arrow i {
   height: 30px;
   width: 30px;
@@ -552,12 +589,7 @@ select {
   text-align: center;
 }
 
-.main-nav svg {
-  height: 38px;
-  width: 38px;
-}
-
-/* BUTTONS */
+/* ---- BUTTONS ---- */
 .message-user button,
 .settings button {
   padding: 10px 0;
@@ -576,37 +608,31 @@ button.purple {
   background-color: #7477bf;
   color: #fff;
 }
-
 button.purple:hover {
   background-color: #81c98f;
-}
-
-button.grey:hover {
-  background-color: #656565;
 }
 
 button.grey {
   background-color: #b2b2b2;
   color: #fff;
 }
+button.grey:hover {
+  background-color: #656565;
+}
 
-/* SLIDERS */
-/* The switch - the box around the slider */
+/* ---- SLIDERS ---- */
 .switch {
   position: relative;
   display: inline-block;
   width: 80px;
   height: 32px;
 }
-
-/* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* The slider */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -645,11 +671,9 @@ input:checked + .slider:before {
   transform: translateX(46px);
 }
 
-/* Rounded sliders */
 .slider.round {
   border-radius: 34px;
 }
-
 .slider.round:before {
   border-radius: 50%;
 }
@@ -709,6 +733,31 @@ main {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  position: relative;
+}
+
+.notification-drop-down {
+  position: absolute;
+  top: 120px;
+  right: 80px;
+  z-index: 999;
+  background-color: #f4f4f4;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.18), 0 4px 10px 0 rgba(0, 0, 0, 0.16);
+}
+
+.notification-x {
+  width: 100%;
+  cursor: pointer;
+  padding: 0 0.5em 0.5em 0;
+}
+
+.notification {
+  width: 300px;
+  height: 60px;
+  line-height: 60px;
+  background-color: #404c72;
+  margin: 6px;
+  padding: 6px;
 }
 
 .user-info {
@@ -730,7 +779,6 @@ main {
   display: flex;
   justify-content: center;
 }
-
 .main-nav ul {
   display: flex;
   flex-direction: row;
@@ -738,33 +786,28 @@ main {
   justify-content: center;
   padding-left: 0;
 }
-
 .main-nav li {
   margin-left: 10px;
   margin-right: 10px;
   border-bottom: 3px solid #404c72;
   z-index: 999;
 }
-
 .main-nav li#current {
   border-bottom: 3px solid #81c98f;
   border-radius: 2px;
 }
-
+.main-nav li#current a {
+  fill: #fff;
+}
 .main-nav li div {
   margin: 8px 2px;
   display: flex;
   align-items: center;
 }
-
 .main-nav a {
   stroke: #404c72;
   stroke-width: 0.5px;
   fill: #b2b2b2;
-}
-
-.main-nav li#current a {
-  fill: #fff;
 }
 
 /* ---- Dashboard Header and Search Bar ---- */
@@ -794,7 +837,6 @@ main {
   align-content: center;
   padding: 10px 3%;
 }
-
 .search-container input {
   width: 260px;
   padding: 8px;
@@ -803,7 +845,6 @@ main {
   border-bottom: 1px solid #b2b2b2;
   border-right: none;
 }
-
 .search-container button {
   padding: 8px;
   float: right;
@@ -813,7 +854,6 @@ main {
   border-left: none;
   background-color: #fff;
 }
-
 .search-container i {
   color: #7477bf;
 }
@@ -866,15 +906,13 @@ canvas {
   display: flex;
   justify-content: center;
 }
-
 .traffic-options ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-inline-start: 0;
+  padding: 0;
   max-width: 316px;
 }
-
 .traffic-options li {
   padding: 0.25em 1em;
   border-radius: 20px;
@@ -882,6 +920,13 @@ canvas {
 
 .traffic-menu li {
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.traffic-menu li:hover {
+  transform: scale(1.2);
+}
+.traffic-menu li.active:hover {
+  transform: scale(1);
 }
 
 /* ---- Daily Traffic Chart Area ---- */
@@ -976,7 +1021,7 @@ canvas {
   margin-right: 10px;
 }
 
-/* ---- Recent Activitgy ---- */
+/* ---- Recent Activity ---- */
 .recent-activity {
   grid-area: activity;
   border-top: 1px solid #b2b2b2;
@@ -1163,7 +1208,6 @@ main {
     width: 100%;
     height: 360px;
   }
-
   .main-nav li {
     margin-top: 30px;
     margin-left: 0;
@@ -1171,12 +1215,10 @@ main {
     border-left: 3px solid #404c72;
     border-bottom: none;
   }
-
   .main-nav li#current {
     border-left: 3px solid #81c98f;
     border-bottom: none;
   }
-
   .main-nav li div {
     margin: 2px auto;
     justify-content: center;
