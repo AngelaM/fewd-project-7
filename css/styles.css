@@ -900,6 +900,7 @@ main {
 
 canvas {
   padding: 16px;
+  max-width: 100%;
 }
 
 /* ---- Traffic Chart Area ---- */
