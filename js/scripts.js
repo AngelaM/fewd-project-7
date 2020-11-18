@@ -219,3 +219,69 @@ document.querySelector('.message-user-form').addEventListener('submit', function
     }
 
 });
+
+/********
+ * Save settings in local storage
+ ********/
+
+ //Check for local storage ability
+function supportLocalStorage() {
+    try {
+        return 'localStorage' in window && window['localStorage'] !== null;
+    } catch(e) {
+        return false;
+    }
+}
+
+if(supportLocalStorage) {
+
+    //Save settings to local storage when form submitted
+    document.querySelector('.settings-form').addEventListener('submit', function (e) {
+        if (document.querySelector('#slider1').checked) {
+            localStorage.setItem('sendEmail', "on");
+        }else {
+            localStorage.setItem('sendEmail', "off");
+        }
+        if (document.querySelector('#slider2').checked) {
+            localStorage.setItem('setProfile', "on");
+        }else {
+            localStorage.setItem('setProfile', "off");
+        }
+        let t = document.querySelector('.timezones').value;
+        localStorage.setItem('timeZone', t);
+    });
+
+    //Retrieve saved settings from local storage and display on page load
+    let sendEmailNotification = localStorage.getItem('sendEmail');
+    console.log("sendEmail: " + sendEmailNotification);
+    let setProfileToPublic = localStorage.getItem('setProfile');
+    let timeZoneSelected = localStorage.getItem('timeZone');
+    if (sendEmailNotification === "on") {
+        document.querySelector('#slider1').checked = true;
+        console.log("true");
+    }
+    else {
+        document.querySelector('#slider1').checked = false;
+        console.log("false");
+    }
+    if (setProfileToPublic === "on") {
+        document.querySelector('#slider2').checked = true;
+    }
+    if (timeZoneSelected) {
+        let drop = document.querySelectorAll('.timezones option');
+        for (let i=0; i<drop.length; i++) {
+            if(timeZoneSelected === drop[i].value) {
+                drop[i].selected = true;
+            } else {
+                drop[i].selected = false;
+            }
+        }
+    }
+
+    //Reset settings when cancel button clicked
+    document.querySelector('.settings-form').addEventListener('reset', function (e) {
+        localStorage.setItem('sendEmail', "off");
+        localStorage.setItem('setProfile', "off");
+        localStorage.setItem('timeZone', 'none');
+    });
+}

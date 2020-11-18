@@ -16,8 +16,7 @@ main {
 
 .section-header {
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     justify-content: space-between;
 }
 
@@ -28,25 +27,20 @@ main {
 /* ---- Header ---- */
 
 .main-header {
+    @include flex-row-justify-center;
     grid-area: header;
     background-color: $color-purple;
-    display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
   }
 
 .account-info {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    @include flex-row-justify-center;
     justify-content: flex-end;
     width: 50vw;
 }
 
 .alert-bell {
-    display: flex;
-    align-items: center;
+    @include flex-row-align-center;
     justify-content: flex-end;
     position: relative;
 }
@@ -76,9 +70,7 @@ main {
 }
 
 .user-info {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
+      @include flex-row-align-center;
       justify-content: flex-start;
       border-left: 1px solid $color-dark-purple;
 }
@@ -92,14 +84,11 @@ main {
 .main-nav {
     grid-area: nav;
     background-color: $color-dark-purple;
-    display: flex;
-    justify-content: center;
+    @include flex-row-justify-center;
 
     ul {
-        display: flex;
-        flex-direction: row;
+        @include flex-row-justify-center;
         margin: 0;
-        justify-content: center;
         padding-left: 0;
     }
 
@@ -146,18 +135,14 @@ main {
     background-color: $color-white;
     padding: 10px;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    @include flex-row-all-center;
 }
 
 .search-container {
     width: 100%;
     border-bottom: $border-grey;
     border-top: $border-grey;
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    @include flex-row-all-center;
     padding: 10px 3%;
 
     input {
@@ -188,9 +173,7 @@ main {
 
 .alert {
     grid-area: alert;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-row-all-center;
     height: 60px;
 }
 
@@ -231,12 +214,10 @@ canvas {
 }
 
 .traffic-options {
-    display: flex;
-    justify-content: center;
+    @include flex-row-justify-center;
 
     ul {
-        display: flex;
-        flex-direction: row;
+        @include flex-row;
         justify-content: space-between;
         padding: 0;
         max-width: 316px;
@@ -278,36 +259,29 @@ canvas {
 /* ---- Social Stats ---- */
 
 .social-stats {
+    @include flex-column-justify-center;
     grid-area: social;
     border-top: $border-grey;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .social-cards-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include flex-column-justify-center;
     align-items: center;
 }
 
 .social-card {
+    @include flex-row-align-center;
     background-color: $color-light-grey;
     border: $border-grey;
     height: 92px;
     width: 72vw;
-    display: flex;
-    flex-direction: row;
     margin-top: 10px;
     margin-bottom: 10px;
-    align-items: center;
     box-shadow: 0 3px 6px 0 rgba(104, 76, 76, 0.2), 0 4px 12px 0 rgba(0, 0, 0, 0.12);
 }
 
 .social-data {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
 }
 
 .social-icon {
@@ -326,19 +300,16 @@ canvas {
 }
 
 .new-member-notices {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
 }
 
 .new-member {
-    display: flex;
-    flex-direction: row;
+    @include flex-row;
     justify-content: space-between;
 }
 
 .left {
-    display: flex;
-    flex-direction: row;
+    @include flex-row;
 }
 
 .new-member:nth-child(-n+3) {
@@ -346,9 +317,7 @@ canvas {
 }
 
 .info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include flex-column-justify-center;
 }
 
 .date-added {
@@ -365,13 +334,11 @@ canvas {
 }
 
 .activity-notices {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
 }
 
 .activity {
-    display: flex;
-    flex-direction: row;
+    @include flex-row;
     justify-content: space-between;
 }
 
@@ -380,26 +347,23 @@ canvas {
 }
 
 .arrow {
-    display: flex;
-    align-items: center;
+    @include flex-row-align-center;
     justify-content: flex-end;
 }
 
 /* ---- Message User ---- */
 
 .message-user {
+    @include flex-column;
     grid-area: message;
     border-top: $border-grey;
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
     min-height: 300px;
 }
 
 .message-user form,
 .settings form {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     justify-content: space-between;
     min-height: 232px;
 }
@@ -455,17 +419,15 @@ canvas {
 /* ---- Settings ---- */
 
 .settings {
+    @include flex-column;
     grid-area: settings;
     border-top: $border-grey;
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
     min-height: 300px;
 }
 
 .buttons {
-    display: flex;
-    flex-direction: row;
+    @include flex-row;
     justify-content: space-between;
 }
 .toggle {

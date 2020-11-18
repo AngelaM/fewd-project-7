@@ -341,6 +341,7 @@ template {
 /* ---- Font Variables ---- */
 /* ---- Media Variables ---- */
 /* ---- Media Variables ---- */
+/* ---- Direction and Alignment of Flex Items ---- */
 /* ---- Page Elements ---- */
 * {
   font-family: "Montsserat", sans-serif;
@@ -712,24 +713,25 @@ main {
 
 /* ---- Header ---- */
 .main-header {
-  grid-area: header;
-  background-color: #7477bf;
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  grid-area: header;
+  background-color: #7477bf;
   justify-content: space-between;
-  align-items: center;
 }
 
 .account-info {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: center;
   justify-content: flex-end;
   width: 50vw;
 }
 
 .alert-bell {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: flex-end;
   position: relative;
@@ -776,13 +778,14 @@ main {
   grid-area: nav;
   background-color: #404c72;
   display: flex;
+  flex-direction: row;
   justify-content: center;
 }
 .main-nav ul {
   display: flex;
   flex-direction: row;
-  margin: 0;
   justify-content: center;
+  margin: 0;
   padding-left: 0;
 }
 .main-nav li {
@@ -823,8 +826,9 @@ main {
   padding: 10px;
   width: 100%;
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  align-content: center;
 }
 
 .search-container {
@@ -832,8 +836,9 @@ main {
   border-bottom: 1px solid #b2b2b2;
   border-top: 1px solid #b2b2b2;
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  align-content: center;
   padding: 10px 3%;
 }
 .search-container input {
@@ -861,6 +866,7 @@ main {
 .alert {
   grid-area: alert;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   height: 60px;
@@ -903,6 +909,7 @@ canvas {
 
 .traffic-options {
   display: flex;
+  flex-direction: row;
   justify-content: center;
 }
 .traffic-options ul {
@@ -942,11 +949,11 @@ canvas {
 
 /* ---- Social Stats ---- */
 .social-stats {
-  grid-area: social;
-  border-top: 1px solid #b2b2b2;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  grid-area: social;
+  border-top: 1px solid #b2b2b2;
 }
 
 .social-cards-section {
@@ -957,15 +964,15 @@ canvas {
 }
 
 .social-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   background-color: #f4f4f4;
   border: 1px solid #b2b2b2;
   height: 92px;
   width: 72vw;
-  display: flex;
-  flex-direction: row;
   margin-top: 10px;
   margin-bottom: 10px;
-  align-items: center;
   box-shadow: 0 3px 6px 0 rgba(104, 76, 76, 0.2), 0 4px 12px 0 rgba(0, 0, 0, 0.12);
 }
 
@@ -1043,16 +1050,17 @@ canvas {
 
 .arrow {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: flex-end;
 }
 
 /* ---- Message User ---- */
 .message-user {
-  grid-area: message;
-  border-top: 1px solid #b2b2b2;
   display: flex;
   flex-direction: column;
+  grid-area: message;
+  border-top: 1px solid #b2b2b2;
   justify-content: space-between;
   min-height: 300px;
 }
@@ -1117,10 +1125,10 @@ canvas {
 
 /* ---- Settings ---- */
 .settings {
-  grid-area: settings;
-  border-top: 1px solid #b2b2b2;
   display: flex;
   flex-direction: column;
+  grid-area: settings;
+  border-top: 1px solid #b2b2b2;
   justify-content: space-between;
   min-height: 300px;
 }

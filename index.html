@@ -294,18 +294,19 @@
               <div class="toggle">
                 <div class="toggle-text">Send Email Notifications</div>
                 <label class="switch">
-                  <input type="checkbox">
+                  <input type="checkbox" id="slider1">
                   <span class="slider round"><span class="slider-text">ON</span></span>
                 </label>
               </div>
               <div class="toggle">
                 <div class="toggle-text">Set Profile to Public</div>
                 <label class="switch">
-                  <input type="checkbox">
+                  <input type="checkbox" id="slider2">
                   <span class="slider round"><span class="slider-text">ON</span></span>
                 </label>
               </div>
               <select class="timezones">
+                <option value="none" disabled selected hidden>Select Timezone</option>
                 <option value="ET">Eastern Time Zone</option>
                 <option value="CT">Central Time Zone</option>
                 <option value="MT">Mountain Time Zone</option>
@@ -315,7 +316,7 @@
               </select>
               <div class="buttons">
                 <button type="submit" id="save-button" class="purple">SAVE</button>
-                <button type="submit" id="cancel-button" class="grey">CANCEL</button>
+                <button type="reset" id="cancel-button" class="grey">CANCEL</button>
               </div>
           </form>
           </div>
