@@ -574,9 +574,9 @@ select {
 /* ---- Member Profile Pictures ---- */
 .pic img {
   border-radius: 50%;
-  height: 45px;
-  width: 45px;
-  margin: 10px;
+  height: 46px;
+  width: 46px;
+  margin: 6px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.18), 0 4px 8px 0 rgba(0, 0, 0, 0.16);
 }
 
@@ -584,7 +584,6 @@ select {
 .arrow i {
   height: 30px;
   width: 30px;
-  margin: 10px;
   color: #b2b2b2;
   text-align: center;
 }
@@ -739,7 +738,7 @@ main {
 .notification-drop-down {
   position: absolute;
   top: 120px;
-  right: 80px;
+  right: 10px;
   z-index: 999;
   background-color: #f4f4f4;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.18), 0 4px 10px 0 rgba(0, 0, 0, 0.16);
@@ -914,7 +913,7 @@ canvas {
   max-width: 316px;
 }
 .traffic-options li {
-  padding: 0.25em 1em;
+  padding: 0.25em 8px;
   border-radius: 20px;
 }
 
@@ -1045,7 +1044,7 @@ canvas {
 .arrow {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 /* ---- Message User ---- */
@@ -1078,6 +1077,42 @@ canvas {
 .timezones,
 #message {
   padding: 8px;
+}
+
+#search-user {
+  width: 100%;
+}
+
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #b2b2b2;
+}
+
+.autocomplete-items div:hover {
+  background-color: #f4f4f4;
+}
+
+.autocomplete-active {
+  background-color: #81c98f !important;
+  color: #fff;
 }
 
 /* ---- Settings ---- */
@@ -1182,6 +1217,9 @@ main {
 
   .traffic-options ul {
     max-width: none;
+  }
+  .traffic-options ul li {
+    padding: 0.25em 1em;
   }
 
   .daily-traffic,

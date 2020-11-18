@@ -113,7 +113,7 @@
           </div>
           <div class="search-container">
             <form>
-              <input type="text" placeholder="Search" name="search">
+              <input type="text" placeholder="Search" autocomplete="off" name="search">
               <button type="submit"><i class="fa fa-search"></i></button>
             </form>
           </div>
@@ -273,7 +273,8 @@
           </div>
           <div class="message-user-form">
             <form>
-              <input type="text" id="search-user" name="user_name" placeholder="Search for user">
+              <div class="autocomplete"></div>
+                <input type="text" id="search-user" list="names" name="user_name" autocomplete="off" placeholder="Search for user">
               <textarea id="message" name="message" placeholder="Message for user" rows="6"></textarea>
               <button type="submit" class="purple">SEND</button>
             </form>

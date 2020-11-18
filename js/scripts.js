@@ -83,25 +83,25 @@ nav3.addEventListener('click', () => {
 let members = [
     {
         name: 'Victoria Chambers',
-        email: 'victoria.chambers80@example.com',
+        email: 'victoria.chambers80 @ example.com',
         dateAdded: '10/15/15',
         picture: 'img/avatars/member-1.jpg'
     },
     {
         name: 'Dale Byrd',
-        email: 'dale.byrd52@example.com',
+        email: 'dale.byrd52 @ example.com',
         dateAdded: '10/15/15',
         picture: 'img/avatars/member-2.jpg'
     },
     {
         name: 'Dawn Wood',
-        email: 'dawn.wood16@example.com',
+        email: 'dawn.wood16 @ example.com',
         dateAdded: '10/15/15',
         picture: 'img/avatars/member-3.jpg'
     },
     {
         name: 'Dan Oliver',
-        email: 'dan.oliver82@example.com',
+        email: 'dan.oliver82 @ example.com',
         dateAdded: '10/15/15',
         picture: 'img/avatars/member-4.jpg'
     }
@@ -169,15 +169,29 @@ html2 +=      `<div class="activity">
 activitySection.innerHTML = html2;
 
 /********
- * Confirmation when Send button clicked
+ * Autocomplete for user messages
  ********/
 
-function confirmation() {
-    alert("Your message has been sent!");
-}
+ //Utilizes Datalist but adjusts so only matches from beginning of string appear
+let input = document.querySelector('#search-user');
+input.addEventListener("input", (e) => {
+    let value = e.target.value;
+    document.querySelector('.autocomplete').innerHTML = "";
+    let searchHTML = `<datalist id="names">`;
+    for (let i=0; i<members.length; i++) {
+        if (members[i].name.substr(0, value.length).toUpperCase() == value.toUpperCase()) {
+        searchHTML += `<option value="${members[i].name}">`
+        }
+    }
+    searchHTML += `</datalist>`;
+    document.querySelector('.autocomplete').innerHTML = searchHTML;
+});
+input.addEventListener("blur", () => {
+    document.querySelector('.autocomplete').innerHTML = "";
+});
 
 /********
- * Message user form validation
+ * Message user form validation and confirmation popup
  ********/
 
 //Create error message and hide
@@ -190,7 +204,13 @@ document.querySelector('#error').style.display = "none";
 
 //Validate fields and display error message when invalid
 document.querySelector('.message-user-form').addEventListener('submit', function (e) {
-    if (document.querySelector("#search-user").value !== ""&& document.querySelector('#message').value !=="") {
+    let validUser = false;
+    for (let i=0; i<members.length; i++) {
+        if (document.querySelector("#search-user").value == members[i].name) {
+            validUser = true;
+        }
+    }
+    if (validUser && document.querySelector('#message').value !=="") {
         confirm("Do you want to send this message?");
     }
     else {

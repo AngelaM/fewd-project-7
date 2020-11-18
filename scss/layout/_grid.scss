@@ -54,7 +54,7 @@ main {
 .notification-drop-down {
     position: absolute;
     top: 120px;
-    right: 80px;
+    right: 10px;
     z-index: 999;
     background-color: $color-light-grey;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.18), 0 4px 10px 0 rgba(0, 0, 0, 0.16);
@@ -243,7 +243,7 @@ canvas {
     }
 
     li {
-        padding: .25em 1em;
+        padding: .25em 8px;
         border-radius: 20px;
     }
 }
@@ -382,7 +382,7 @@ canvas {
 .arrow {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 /* ---- Message User ---- */
@@ -417,6 +417,39 @@ canvas {
 #message {
     padding: 8px;
 }
+
+#search-user {
+    width: 100%;
+}
+
+.autocomplete {
+    position: relative;
+    display: inline-block;
+  }
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  .autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: $color-white;
+    border-bottom: 1px solid $color-grey;
+  }
+  .autocomplete-items div:hover {
+    background-color: $color-light-grey;
+  }
+  .autocomplete-active {
+    background-color: $color-lime-green !important;
+    color: $color-white;
+  }
 
 
 /* ---- Settings ---- */
@@ -549,6 +582,10 @@ body {
 
     .traffic-options ul {
         max-width: none;
+
+        li {
+            padding: .25em 1em;
+        }
     }
 
     .daily-traffic,
