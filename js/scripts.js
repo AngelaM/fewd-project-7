@@ -253,16 +253,13 @@ if(supportLocalStorage) {
 
     //Retrieve saved settings from local storage and display on page load
     let sendEmailNotification = localStorage.getItem('sendEmail');
-    console.log("sendEmail: " + sendEmailNotification);
     let setProfileToPublic = localStorage.getItem('setProfile');
     let timeZoneSelected = localStorage.getItem('timeZone');
     if (sendEmailNotification === "on") {
         document.querySelector('#slider1').checked = true;
-        console.log("true");
     }
     else {
         document.querySelector('#slider1').checked = false;
-        console.log("false");
     }
     if (setProfileToPublic === "on") {
         document.querySelector('#slider2').checked = true;
